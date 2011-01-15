@@ -1,10 +1,10 @@
 <document>
   <patch document="example_doc">
-    <create at="">
+    <add at="">
       <section ref="p1"><p>I exist.</p></section>
       I am a text node
       <section ref="p2"><p>This exists too.</p></section>
-    </create>
+    </add>
   </patch>
 </document>
 

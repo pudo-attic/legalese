@@ -1,8 +1,8 @@
 <document>
   <patch document="hasen">
-    <create at="/4/g/37/n">
+    <add at="/4/g/37/n">
       <p>I exist.</p>
-    </create>
+    </add>
   </patch>
 
   <patch document="stgb@47587">

@@ -1,9 +1,13 @@
 <document>
-  <title>Verordnung zur Festsetzung des Umlagesatzes für das Insolvenzgeld für das Kalenderjahr 2009</title>
-  <publication value="2009-01-02">vom 2. Januar 2009</publication>
-  <p>Auf Grund des § 361 Satz 1 Nr. 1 des Dritten Buches Sozialgesetzbuch – Arbeitsförderung – (Artikel 1 des Gesetzes vom 24. März 1997, BGBl. I S.
-    594, 595), der zuletzt durch Artikel 3 Nummer 2 des Gesetzes vom 30. Oktober 2008 (BGBl. I S. 2130) geändert worden ist, verordnet das
-    Bundesministerium für Arbeit und Soziales:</p>
+  <head>
+    <title>Verordnung zur Festsetzung des Umlagesatzes für das Insolvenzgeld für das Kalenderjahr 2009</title>
+    <publication value="2009-01-02">vom 2. Januar 2009</publication>
+  </head>
+  <meta>
+    <p>Auf Grund des § 361 Satz 1 Nr. 1 des Dritten Buches Sozialgesetzbuch – Arbeitsförderung – (Artikel 1 des Gesetzes vom 24. März 1997, BGBl. I S.
+      594, 595), der zuletzt durch Artikel 3 Nummer 2 des Gesetzes vom 30. Oktober 2008 (BGBl. I S. 2130) geändert worden ist, verordnet das
+      Bundesministerium für Arbeit und Soziales:</p>
+  </meta>
 
   <section ref="p1">
     <header>Umlagesatz</header>
@@ -15,9 +19,12 @@
       <p>Diese Verordnung tritt mit Wirkung vom 1. Januar 2009 in Kraft.</p>
     </sentence>
   </section>
-  <p>Der Bundesrat hat zugestimmt.</p>
-  <signatures>
-    <date>Berlin, den 2. Januar 2009</date>
-    <signatory>Der Bundesminister für Arbeit und Soziales Olaf Scholz</signatory>
-  </signatures>
+  <meta ref="2974231">
+    <p>Der Bundesrat hat zugestimmt.</p>
+    <signatures>
+      <date>Berlin, den 2. Januar 2009</date>
+      <signatory>Der Bundesminister für Arbeit und Soziales Olaf Scholz</signatory>
+    </signatures>
+  </meta>
+
 </document>
