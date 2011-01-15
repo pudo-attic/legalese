@@ -1,13 +1,14 @@
-<patch document="hasen">
-  <create at="/4/g/37/n">
-    <p>I exist.</p>
-  </create>
-</patch>
+<document>
+  <patch document="hasen">
+    <create at="/4/g/37/n">
+      <p>I exist.</p>
+    </create>
+  </patch>
 
-<patch document="stgb@47587">
+  <patch document="stgb@47587">
     <append at="§5">
-        <p>Ich bin ein hase</p>
+      <p>Ich bin ein hase</p>
     </append>
-</patch>
-
+  </patch>
+</document>
 

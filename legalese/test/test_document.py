@@ -13,13 +13,16 @@ class TestDocument(unittest.TestCase):
         assert self.document.id == "TESTFOO"
         assert not len(self.document.patches)
 
+    def test_should_explode_when_root_is_not_document(self):
+	self.assertRaises(AssertionError, Document.from_string, "foo", """<something></something>""")
+
+
     def test_loading_document_from_string(self):
         doc = Document.from_string("foo", """<document></document>""")
         assert isinstance(doc, Document)
 
 
 class TestDocumentWithPatches(unittest.TestCase):
-
     def setUp(self):
         fn = "fixtures/with_patches.xml"
         self.document = Document.from_file("FOO", fn)
@@ -31,9 +34,8 @@ class TestDocumentWithPatches(unittest.TestCase):
 
 
 class TestPatch(unittest.TestCase):
-
     def test_apply_patch(self):
-        patch = Document.from_string("foo", """<patch document="example"></patch>""").patches[0]
+        patch = Document.from_string("foo", """<document><patch document="example"></patch></document>""").patches[0]
         docs = patch.apply({})
         assert len(docs.keys()) == 1
         assert docs.keys()[0] == 'example'
