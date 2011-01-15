@@ -1,4 +1,6 @@
+# encoding: utf-8
 import unittest
+from lxml import etree
 from legalese import Patch
 from legalese import Document
 
@@ -16,6 +18,17 @@ class TestDocument(unittest.TestCase):
     def test_should_explode_when_root_is_not_document(self):
 	self.assertRaises(AssertionError, Document.from_string, "foo", """<something></something>""")
 
+    def test_empty_doc_should_return_root_for_lookup(self):
+        document = Document.empty("id")
+	assert document.lookup("") is not None
+
+
+    def test_lookup(self):
+	assert self.document.lookup_text("").startswith("Verordnung")
+	assert self.document.lookup_text("p1").startswith("Umlagesatz")
+	assert self.document.lookup_text("p2").startswith("Inkrafttreten")
+	assert self.document.lookup_text("p1/s1") is None
+	assert self.document.lookup_text("p2/s1").startswith("Diese Verordnung tritt")
 
     def test_loading_document_from_string(self):
         doc = Document.from_string("foo", """<document></document>""")
@@ -47,11 +60,8 @@ class TestPatch(unittest.TestCase):
 
 	assert docs.keys()[0] == "example_doc"
 	assert isinstance(doc, Document)
-
-
-
-
-
+	assert doc.lookup_text("p1").startswith("I exist")
+	assert doc.lookup_text("p2").startswith("This exists")
 
 
 

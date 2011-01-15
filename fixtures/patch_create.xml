@@ -1,7 +1,9 @@
 <document>
   <patch document="example_doc">
     <create at="">
-      <section id="§1"><p>I exist.</p></section>
+      <section ref="p1"><p>I exist.</p></section>
+      I am a text node
+      <section ref="p2"><p>This exists too.</p></section>
     </create>
   </patch>
 </document>

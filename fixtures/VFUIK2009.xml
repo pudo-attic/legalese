@@ -5,13 +5,15 @@
     594, 595), der zuletzt durch Artikel 3 Nummer 2 des Gesetzes vom 30. Oktober 2008 (BGBl. I S. 2130) geändert worden ist, verordnet das
     Bundesministerium für Arbeit und Soziales:</p>
 
-  <section id="§1">
+  <section ref="p1">
     <header>Umlagesatz</header>
     <p>Der Umlagesatz für das Kalenderjahr 2009 beträgt 0,10 Prozent.</p>
   </section>
-  <section id="§2">
+  <section ref="p2">
     <header>Inkrafttreten</header>
-    <p>Diese Verordnung tritt mit Wirkung vom 1. Januar 2009 in Kraft.</p>
+    <sentence ref="s1">
+      <p>Diese Verordnung tritt mit Wirkung vom 1. Januar 2009 in Kraft.</p>
+    </sentence>
   </section>
   <p>Der Bundesrat hat zugestimmt.</p>
   <signatures>

@@ -7,7 +7,7 @@
   <section id="§1">
     <p>Dokument vier wird wie folgt geändert</p>
     <patch document="document4">
-        <patch document="i?dont_exist"></patch>
+        <patch document="i dont_exist"></patch>
     </patch>
   </section>
 </document>

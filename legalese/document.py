@@ -1,3 +1,4 @@
+# encoding: utf-8
 import os
 from lxml import etree
 
@@ -9,6 +10,19 @@ class Document(object):
 	assert element.tag == "document"
         self.id = document_id
         self.element = element
+
+    def lookup(self, path):
+	xpath = "/".join(["*[@ref='%s']" % s for s in path.split("/") if len(s)])
+	if len(xpath) == 0:
+	    return self.element
+
+	return self.element.find(xpath)
+
+    def lookup_text(self, path):
+	node = self.lookup(path)
+	if node is not None:
+	    return node.xpath("string()").strip()
+
 
     @classmethod
     def from_file(cls, document_id, file_name):
