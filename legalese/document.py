@@ -15,6 +15,12 @@ class Document(object):
         xml_doc = etree.parse(file_name)
         return cls(document_id, xml_doc)
 
+    @classmethod
+    def from_string(cls, document_id, string):
+        xml_doc = etree.fromstring(string)
+        return cls(document_id, xml_doc)
+
+
     @property
     def patches(self):
         ps = self.element.xpath('//patch[not(ancestor::patch)]')

@@ -13,6 +13,10 @@ class TestDocument(unittest.TestCase):
         assert self.document.id == "TESTFOO"
         assert not len(self.document.patches)
 
+    def test_loading_document_from_string(self):
+        doc = Document.from_string("foo", """<document></document>""")
+        assert isinstance(doc, Document)
+
 
 class TestDocumentWithPatches(unittest.TestCase):
 
@@ -28,13 +32,8 @@ class TestDocumentWithPatches(unittest.TestCase):
 
 class TestPatch(unittest.TestCase):
 
-    def test_loading_patch_from_string(self):
-        patch = Patch.from_string("""<patch document="example"></patch>""")
-        assert isinstance(patch, Patch)
-        assert patch.document_name == 'example'
-
     def test_apply_patch(self):
-        patch = Patch.from_string("""<patch document="example"></patch>""")
+        patch = Document.from_string("foo", """<patch document="example"></patch>""").patches[0]
         docs = patch.apply({})
         assert len(docs.keys()) == 1
         assert docs.keys()[0] == 'example'
