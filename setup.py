@@ -18,7 +18,7 @@ setup(name='legalese',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
-          # -*- Extra requirements: -*-
+				"lxml>=2.2.7"
       ],
       entry_points="""
       # -*- Entry points: -*-
