@@ -1,0 +1,21 @@
+
+ops: create | delete | replace 
+convenience_ops: copy
+
+
+changeset = 
+
+<patch document="hasen">
+  <create to="/4/g/37/n">
+    
+    <p>I exist.</p>
+  </create>
+</patch>
+
+<patch document="stgb@47587">
+    <append to="§5">
+        <p>Ich bin ein hase</p>
+    </append>
+</patch>
+        
+    

@@ -1,0 +1,13 @@
+<document>
+  <title>Verordnung zur Festsetzung des Umlagesatzes für das Insolvenzgeld für das Kalenderjahr 2009</title>
+  <patch document="test_document">
+
+  </patch>
+
+  <section id="§1">
+    <p>Dokument vier wird wie folgt geändert</p>
+    <patch document="document4">
+        <patch document="i?dont_exist"></patch>
+    </patch>
+  </section>
+</document>
