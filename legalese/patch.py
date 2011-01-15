@@ -9,6 +9,10 @@ class Patch():
         return self.element.get('document')
 
     def apply(self, store):
+	from document import Document
         document = store.get(self.document_name)
+	if document is None:
+	    document = Document.empty(self.document_name)
+
         return {self.document_name: document}
 

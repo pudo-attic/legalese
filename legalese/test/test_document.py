@@ -39,7 +39,19 @@ class TestPatch(unittest.TestCase):
         docs = patch.apply({})
         assert len(docs.keys()) == 1
         assert docs.keys()[0] == 'example'
-        assert docs.values()[0] == None
+
+    def test_apply_create_patch(self):
+	patch = Document.from_file(None, "fixtures/patch_create.xml").patches[0]
+	docs = patch.apply({})
+	doc = docs.values()[0]
+
+	assert docs.keys()[0] == "example_doc"
+	assert isinstance(doc, Document)
+
+
+
+
+
 
 
 

@@ -5,7 +5,6 @@ from patch import Patch
 
 
 class Document(object):
-
     def __init__(self, document_id, element):
 	assert element.tag == "document"
         self.id = document_id
@@ -21,6 +20,9 @@ class Document(object):
         xml_doc = etree.fromstring(string)
         return cls(document_id, xml_doc)
 
+    @classmethod
+    def empty(cls, document_id):
+	return cls.from_string(document_id, "<document></document>")
 
     @property
     def patches(self):
