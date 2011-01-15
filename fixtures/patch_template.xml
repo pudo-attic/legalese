@@ -1,12 +1,30 @@
 <document>
   sun
   <section ref="p1">
-    1<a />2<b />3
+    1<a/>2<b/>3
   </section>
   moon
   <section ref="p2">
-    4<c />5<d />6
+    4<c/>5<d/>6
   </section>
   earth
+
+  <separator/>
+
+  <section ref="a1">
+    <p/><q/>
+  </section>
+  <section ref="a2">
+    <r/><s/>
+  </section>
+
+  <separator/>
+
+  <section ref="b1">
+    TEXT
+  </section>
+  <section ref="b2">
+    text
+  </section>
 </document>
 
