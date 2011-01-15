@@ -24,36 +24,36 @@ class Patch():
 
         return {self.document_name: document}
 
-    def _add(self, document, operation):
-        target_path = operation.get("at")
+    def _add(self, document, change):
+        target_path = change.get("at")
         target = document.lookup(target_path)
 
-        name = operation.get("pos", "append")
+        name = change.get("pos", "append")
         if name == "after":
-            if operation.text:
+            if change.text:
                 next = target.getprevious()
-                next.text = next.text + operation.text if next.text else operation.text
-            for elem in list(operation):
+                next.text = next.text + change.text if next.text else change.text
+            for elem in list(change):
                 target.addnext(elem)
         elif name == "before":
-            if operation.text:
+            if change.text:
                 next = target.getnext()
-                next.text = operation.text + next.text if next.text else operation.text
-            for elem in reversed(list(operation)):
+                next.text = change.text + next.text if next.text else change.text
+            for elem in reversed(list(change)):
                 target.addprevious(elem)
         elif name == "append":
-            if operation.text:
+            if change.text:
                 if len(list(target)):
                     prev = list(target)[-1]
-                    prev.tail = prev.tail + operation.text if prev.tail else operation.text
+                    prev.tail = prev.tail + change.text if prev.tail else change.text
                 else:
-                    target.text = target.text + operation.text if target.text else operation.text
-            for elem in list(operation):
+                    target.text = target.text + change.text if target.text else change.text
+            for elem in list(change):
                 target.append(elem)
         elif name == "prepend":
-            if operation.text:
-                target.text = target.text + operation.text if target.text else operation.text
-            for elem in reversed(list(operation)):
+            if change.text:
+                target.text = target.text + change.text if target.text else change.text
+            for elem in reversed(list(change)):
                 target.insert(0, elem)
         else:
             raise ValueError()

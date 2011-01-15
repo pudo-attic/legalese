@@ -1,0 +1,18 @@
+<document>
+  <patch document="example">
+    <add at="p1" pos="before">
+      a<one/>b<two/>c
+    </add>
+    <add at="p2" pos="after">
+      d<three/>e<four/>f
+    </add>
+    <add at="p1" pos="append">
+      g<five/>h<six/>i
+    </add>
+    <add at="p2" pos="prepend">
+      j<seven/>k<eight/>l
+    </add>
+  </patch>
+</document>
+
+

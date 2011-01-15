@@ -1,12 +1,15 @@
 <document>
   sun
+  a<one/>b<two/>c
   <section ref="p1">
     1<a />2<b />3
+    g<five/>h<six/>i
   </section>
   moon
   <section ref="p2">
+    j<seven/>k<eight/>l
     4<c />5<d />6
   </section>
+  d<three/>e<four/>f
   earth
 </document>
-
