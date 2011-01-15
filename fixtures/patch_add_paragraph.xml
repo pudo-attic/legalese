@@ -1,0 +1,22 @@
+<document>
+  <patch document="example_doc">
+    <add at="p2" pos="after">
+      <section ref="p3">
+	I am paragraph three.
+      </section>
+    </add>
+    <add at="p1" pos="before">
+      <section ref="p0">
+	I am paragraph zero
+      </section>
+    </add>
+    <add at="p1" pos="append">
+      And that's okay<x/>really!<y/>yay!
+    </add>
+    <add at="p2" pos="prepend">
+      Lookout:<a/>B<c/>D
+    </add>
+  </patch>
+</document>
+
+

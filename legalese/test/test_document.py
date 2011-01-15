@@ -63,5 +63,19 @@ class TestPatch(unittest.TestCase):
 	assert doc.lookup_text("p1").startswith("I exist")
 	assert doc.lookup_text("p2").startswith("This exists")
 
+    def test_append_para_to_existing_doc(self):
+	patch = Document.from_file(None, "fixtures/patch_add_paragraph.xml").patches[0]
+	original_doc = Document.from_file("example_doc", "fixtures/VFUIK2009.xml")
+
+	docs = patch.apply({"example_doc": original_doc})
+	doc = docs.values()[0]
+	print etree.tostring(doc.lookup(""), pretty_print = True)
+	assert doc.lookup_text("p3").startswith("I am paragraph three")
+	assert doc.lookup("p3").getprevious().get("ref") == "p2"
+	assert doc.lookup_text("p0").startswith("I am paragraph zero")
+	assert doc.lookup("p0").getnext().get("ref") == "p1"
+
+	assert doc.lookup_text("p1").endswith("And that's okay")
+	assert doc.lookup_text("p2").startswith("Lookout: Diese Verordnung")
 
 

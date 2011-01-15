@@ -24,13 +24,41 @@ class Patch():
 
         return {self.document_name: document}
 
-
-
     def _add(self, document, operation):
 	target_path = operation.get("at")
 	target = document.lookup(target_path)
-	for node in operation.iterchildren():
-	    target.append(node)
+
+	method = {
+	    "after": target.addnext,
+	    "before": target.addprevious,
+	    "append": lambda text, children: target.append(children),
+	    "prepend": lambda x: target.insert(0,x)
+	}.get(operation.get("pos","append"))
+
+	name = operation.get("pos", "append")
+	if name == "after":
+	    if operation.text:
+		next = target.getnext()
+		next.text = next.text + operation.text if next.text else operation.text
+	    for elem in list(operation):
+		target.addnext(elem)
+	elif name == "before":
+	    for elem in reversed(list(operation)):
+		target.addprevious(elem)
+	elif name == "append":
+	    if operation.text:
+		last = list(target)[-1]
+		last.text = last.text + operation.text if last.text else operation.text
+	    for elem in list(operation):
+		target.addnext(elem)
+	elif name == "prepend":
+	    pass
+	else:
+	    raise ValueError()
+
+
+
+
 
 
 
